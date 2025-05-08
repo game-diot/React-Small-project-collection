@@ -13,8 +13,7 @@
 1. 克隆仓库：复制连接时清除前缀HTTPS/SSH
 
    ```bash
-HTTPS:https://github.com/game-diot/Small-project-collection.git
-SSH:git@github.com:game-diot/Small-project-collection.git
+   https://github.com/game-diot/Small-project-collection.git
    ```
 
 2. 安装依赖：
