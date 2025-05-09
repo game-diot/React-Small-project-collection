@@ -22,8 +22,8 @@ export default function TodoList() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-  const validTask = (tasks, existingTask) => {
-    const trimmedTask = existingTask.trim();
+  const validTask = (task, existingTask) => {
+    const trimmedTask = task.trim();
     if (!trimmedTask) {
       return "任务不能为空";
     }
@@ -90,7 +90,11 @@ export default function TodoList() {
       {tasks.length === 0 ? (
         <p>清单中目前没有任务待做</p>
       ) : (
-        <ul>
+        <ul
+          className={`${styles.taskList} ${
+            darkMode ? styles.darkTaskList : ""
+          }`}
+        >
           {tasks.map((task, index) => (
             <li className={styles.taskItem} key={index}>
               {task}

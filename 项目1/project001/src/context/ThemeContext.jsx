@@ -1,15 +1,15 @@
 import React, { createContext, useContext, useState } from "react";
 
-//创建ThemeContext变量来存储createContext的返回值
+//创建ThemeContext变量来存储createContext的返回值，用于传递到不同深度的组件树
 const ThemeContext = createContext();
 
 //创建ThemeProvider组件，接收子组件作为参数，用来包裹App组件，实现明暗主题切换功能
-export default function ThemeProvider({ children }) {
+export function ThemeProvider({ children }) {
   //使用useState来存储当前的主题状态
   const [darkMode, setDarkMode] = useState(() => {
     //使用saveTheme变量来存储当前的主题状态，从浏览器中获取darkMode数据，不存在则返回null
     const savedTheme = localStorage.getItem("darkMode");
-    //根据浏览器获取数据情况来决定返回值，true或false
+    //根据浏览器获取数据情况来决定返回值，true或false，也就是暗或亮主题
     return savedTheme ? JSON.parse(savedTheme) : false;
   });
   //创建toggleTheme函数，用来切换主题状态
