@@ -1,194 +1,182 @@
-:root {
-    /* Light theme colors */
-    --color-bg-light: #f4f4f4;
-    --color-text-light: #222;
-    --color-border-light: #ccc;
-    --color-placeholder-light: #777;
-
-    --color-primary: #007bff;
-    --color-primary-hover: #0056b3;
-
-    --color-error: #d9534f;
-    --color-error-hover: #a71d2a;
-
-    /* Dark theme colors */
-    --color-bg-dark: #1e1e1e;
-    --color-text-dark: #f9f9f9;
-    --color-input-dark: #333;
-    --color-border-dark: #555;
-    --color-btn-dark: #444;
-    --color-btn-dark-hover: #666;
-    --color-placeholder-dark: #bbb;
-
-    /* Spacing & misc */
-    --radius: 5px;
-    --shadow-dark: 0 0 10px rgba(0, 0, 0, 0.3);
-    --font-size-base: 1rem;
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
-/* ===== Layout ===== */
+.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.light {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+.container {
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .container {
+  background-color: #242424;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.light .container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 .title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-align: center;
-    margin: 1rem 0;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .todoForm {
-    display: flex;
-    gap: 0.5rem;
-    width: min(500px, 100%);
-    margin: 1rem auto;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.taskList {
-    list-style: none;
-    width: min(600px, 100%);
-    margin: 1rem auto 0;
-    padding: 0 1rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border-light);
-}
-
-.taskItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
-    font-size: var(--font-size-base);
-}
-
-.taskItem:last-child{
-    border-bottom: none;
-}
-
-/* ===== Input & Buttons ===== */
 .taskInput {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid var(--color-border-light);
-    outline: none;
-    border-radius: 4px;
-    font-size: var(--font-size-base);
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.taskInput:focus {
+  outline: none;
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+}
+
+.darkInput {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-color: #404040;
 }
 
 .addButton {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-primary);
-    color: #fff;
-    font-size: var(--font-size-base);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, #4ecdc4, #45b7af);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .addButton:hover {
-    background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
 }
 
-.toggleBtn {
-    display: flex;
-    padding: 0.5rem 1rem;
-    font-size: var(--font-size-base);
-    border: none;
-    border-radius: var(--radius);
-    margin-left: auto;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+.errorMessage {
+  color: #ff6b6b;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 0.9rem;
 }
 
-.lightBtn {
-    background-color: var(--color-primary);
-    color: #fff;
+.taskList {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  overflow: hidden;
 }
 
-.lightBtn:hover {
-    background-color: var(--color-primary-hover);
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
 }
 
-.darkBtn {
-    background-color: var(--color-btn-dark);
-    color: #fff;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.darkBtn:hover {
-    background-color: var(--color-btn-dark-hover);
+.taskItem:hover {
+  transform: translateX(5px);
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .deleteBtn,
 .moveBtns {
-    background: transparent;
-    border: none;
-    font-size: var(--font-size-base);
-    cursor: pointer;
-    transition: color 0.2s ease;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .deleteBtn {
-    color: var(--color-error);
+  background-color: #ff6b6b;
+  color: white;
 }
 
 .deleteBtn:hover {
-    color: var(--color-error-hover);
+  background-color: #ff5252;
+}
+
+.moveBtns {
+  background-color: #4ecdc4;
+  color: white;
 }
 
 .moveBtns:hover {
-    color: var(--color-primary-hover);
+  background-color: #45b7af;
 }
 
-.controls {
-    display: flex;
-    gap: 0.85rem;
+.toggleBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* ===== Feedback ===== */
-.errorMessage {
-    color: var(--color-error);
-    font-size: 0.9rem;
-    text-align: center;
+.darkBtn {
+  background-color: #ffffff;
+  color: #1a1a1a;
 }
 
-.noTaskMessage {
-    color: var(--color-placeholder-light);
-    text-align: center;
-    font-style: italic;
-    margin-top: 1rem;
-}
-
-/* ===== Themes ===== */
-.light {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-light);
-    min-height: 100vh;
-    padding: 1rem;
-}
-
-.dark {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-dark);
-    min-height: 100vh;
-    padding: 1rem;
-}
-
-.darkInput {
-    background-color: var(--color-input-dark);
-    color: var(--color-text-dark);
-    border: 1px solid var(--color-border-dark);
-}
-
-.darkInput::placeholder {
-    color: var(--color-placeholder-dark);
-}
-
-.darkTaskList {
-    background-color: #2c2c2c;
-    border: 1px solid var(--color-border-dark);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-dark);
-}
-
-.darkTaskList li {
-    border-bottom: 1px solid var(--color-border-dark);
+.lightBtn {
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
