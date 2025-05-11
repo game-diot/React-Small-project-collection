@@ -14,7 +14,7 @@ export function ThemeProvider({ children }) {
   });
   //创建toggleTheme函数，用来切换主题状态
   const toggleTheme = () => {
-    //调用setDarkMode函数来设置当前的主题状态，传入的prevMode参数，取反作newMode。
+    //调用setDarkMode函数来设置当前的主题状态，传入的prevMode参数也就是前一个darkMode状态，取反作newMode。
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
       //使用localStorage来存储修改后的主题状态
