@@ -2,7 +2,14 @@
 
 ## 项目简介
 
-这是一个使用 React 开发的备忘录清单应用，具有明暗主题切换功能，可以帮助用户管理日常任务。应用采用了现代化的设计风格，支持本地数据持久化存储。
+这是一个使用 React 开发的备忘录清单应用，具有明暗主题切换功能，可以帮助用户管理日常任务。应用采用了现代化的设计风格，支持本地数据持久化存储。本项目适合 React 初学者学习和参考。
+
+## 开发环境
+
+- Node.js >= 14.0.0
+- React 18
+- Vite
+- CSS Modules
 
 ## 主要功能
 
@@ -13,7 +20,29 @@
 - ✅ 本地数据持久化存储
 - ✅ 智能错误提示（自动消失）
 
+## 快速开始
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+```
+
 ## 技术实现细节
+
+### 项目架构
+
+- 使用 Vite 作为构建工具
+- 采用 React 18 最新特性
+- 模块化的文件结构
+  - `src/components`: 组件文件
+  - `src/context`: Context 相关文件
+  - `src/styles`: 样式文件
 
 ### 状态管理
 
@@ -34,6 +63,24 @@
 - 任务项悬停动画
 - 优雅的按钮交互效果
 - 全屏高度自适应
+
+## 核心代码解析
+
+### 主题切换实现
+
+```jsx
+// ThemeContext.jsx
+const ThemeContext = createContext();
+
+export function ThemeProvider({ children }) {
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
+
+  // ... 其他实现代码
+}
+```
 
 ## 使用说明
 
