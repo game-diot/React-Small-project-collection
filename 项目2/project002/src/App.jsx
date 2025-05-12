@@ -10,30 +10,30 @@ function App() {
   const [animating, setAnimating] = useState(false);
 
   const colors = [
-    "红色",
-    "绿色",
-    "蓝色",
-    "灰色",
-    "橙色",
-    "粉色",
-    "紫罗兰色",
-    "紫色",
-    "黄色",
-    "棕色",
-    "蓝绿色",
-    "青色",
-    "靛青色",
-    "青柠色",
-    "天蓝色",
-    "品红色",
-    "深红色",
-    "金色",
-    "珊瑚色",
-    "海军蓝",
-    "深红色",
-    "橄榄色",
-    "深绿色",
-    "巧克力色",
+    { name: "红色", value: "red" },
+    { name: "绿色", value: "green" },
+    { name: "蓝色", value: "blue" },
+    { name: "灰色", value: "gray" },
+    { name: "橙色", value: "orange" },
+    { name: "粉色", value: "pink" },
+    { name: "紫罗兰色", value: "violet" },
+    { name: "紫色", value: "purple" },
+    { name: "黄色", value: "yellow" },
+    { name: "棕色", value: "brown" },
+    { name: "蓝绿色", value: "teal" },
+    { name: "青色", value: "cyan" },
+    { name: "靛青色", value: "indigo" },
+    { name: "青柠色", value: "lime" },
+    { name: "天蓝色", value: "skyblue" },
+    { name: "品红色", value: "magenta" },
+    { name: "深红色", value: "maroon" },
+    { name: "金色", value: "gold" },
+    { name: "珊瑚色", value: "coral" },
+    { name: "海军蓝", value: "navy" },
+    { name: "深红色", value: "crimson" },
+    { name: "橄榄色", value: "olive" },
+    { name: "深绿色", value: "darkgreen" },
+    { name: "巧克力色", value: "chocolate" },
   ];
   // 复制颜色到剪贴板
   const copyToClipboard = () => {
@@ -94,7 +94,7 @@ function App() {
           <span className="current-color">
             {color ? (
               <>
-                当前背景为: <span className="color-value">{color}</span>
+                当前背景值为: <span className="color-value">{color}</span>
               </>
             ) : (
               <>默认背景</>
@@ -172,13 +172,14 @@ function App() {
       {/* 颜色按钮部分，用于选择常见颜色 */}
       <div className="color-buttons-section">
         <div className="color-buttons-grid">
-          {colors.map((normalColor, index) => (
+          {colors.map((colorObj, index) => (
             <button
               key={index}
-              onClick={() => setColor(normalColor)}
+              onClick={() => setColor(colorObj.value)}
               className="color-button"
+              style={{ backgroundColor: colorObj.value, color: "white" }}
             >
-              {normalColor}
+              {colorObj.name}
             </button>
           ))}
         </div>
