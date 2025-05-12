@@ -78,6 +78,12 @@ function App() {
   const clearHistory = () => {
     setColorHistory([]);
   };
+  // 修改点击普通颜色按钮的处理函数
+  const handleColorClick = (colorValue) => {
+    setColor(colorValue);
+    setCustomColor(colorValue);
+  };
+
   return (
     <div
       className={`app-container ${animating ? "scale-105" : "scale-100"}`}
@@ -159,7 +165,7 @@ function App() {
             {colorHistory.map((usedColor, index) => (
               <button
                 key={index}
-                onClick={() => setColor(usedColor)}
+                onClick={() => handleColorClick(usedColor)}
                 title={usedColor}
                 className="history-color-button"
                 style={{ backgroundColor: usedColor }}
@@ -175,7 +181,7 @@ function App() {
           {colors.map((colorObj, index) => (
             <button
               key={index}
-              onClick={() => setColor(colorObj.value)}
+              onClick={() => handleColorClick(colorObj.value)}
               className="color-button"
               style={{ backgroundColor: colorObj.value, color: "white" }}
             >
