@@ -103,7 +103,7 @@ function App() {
                 当前背景值为: <span className="color-value">{color}</span>
               </>
             ) : (
-              <>默认背景</>
+              <>默认背景值:gradient渐变</>
             )}
           </span>
           <button
