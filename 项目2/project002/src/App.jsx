@@ -79,7 +79,14 @@ function App() {
     setColorHistory([]);
   };
   return (
-    <div className="app-container">
+    <div
+      className={`app-container ${animating ? "scale-105" : "scale-100"}`}
+      style={{
+        background:
+          color ||
+          "linear-gradient(135deg, var(--primary-color), var(--secondary-color))",
+      }}
+    >
       {/* 项目上部，用于说明项目的名称以及当前的颜色名称，以及复制颜色的功能。 */}
       <div className="header">
         <h1 className="title">🎨 修改背景颜色</h1>
