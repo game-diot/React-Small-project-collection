@@ -150,32 +150,30 @@ function App() {
           </div>
 
           {/* 历史颜色部分 */}
-          {colorHistory.length > 0 && (
-            <div className="history-section">
-              <div className="history-header">
-                <h3 className="history-title">最近使用过的颜色</h3>
-                <button
-                  onClick={clearHistory}
-                  title="清空历史记录"
-                  className="clear-button"
-                >
-                  <Trash size={14} />
-                  清空历史记录
-                </button>
-              </div>
-              <div className="color-history">
-                {colorHistory.map((usedColor, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleColorClick(usedColor)}
-                    title={usedColor}
-                    className="history-color-button"
-                    style={{ backgroundColor: usedColor }}
-                  />
-                ))}
-              </div>
+          <div className="history-section">
+            <div className="history-header">
+              <h3 className="history-title">最近使用过的颜色</h3>
+              <button
+                onClick={clearHistory}
+                title="清空历史记录"
+                className="clear-button"
+              >
+                <Trash size={14} />
+                清空历史记录
+              </button>
             </div>
-          )}
+            <div className="color-history">
+              {colorHistory.map((usedColor, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleColorClick(usedColor)}
+                  title={usedColor}
+                  className="history-color-button"
+                  style={{ backgroundColor: usedColor }}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="right-panel">
