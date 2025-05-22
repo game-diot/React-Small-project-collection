@@ -1,6 +1,5 @@
 import "./index.css";
 import Navbar from "./components/navbar";
-import Main from "./components/main";
 import Footer from "./components/footer";
 import Container from "./components/container";
 export default function App() {
@@ -8,7 +7,6 @@ export default function App() {
     <div>
       <Navbar />
       <Container />
-      <Main />
       <Footer />
     </div>
   );

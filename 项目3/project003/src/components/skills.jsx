@@ -51,48 +51,85 @@ export default function Skills() {
   ];
 
   return (
-    <section>
-      <div>
-        <div></div>
-      </div>
+    <section id="skills" className="py-16 bg-gray-50 dark:bg-gray-900">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
-      <div>
-        <div>
-          <div>
-            <span>My Skill Pool</span>
-            <h2>Skills & Technologies</h2>
-            <p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="max-w-4xl mx-auto"
+        >
+          <motion.div variants={slideUp} className="text-center mb-16">
+            <motion.span
+              variants={fadeIn}
+              className="inline-block px-3 py-1 text-sm font-medium text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900 rounded-full mb-4"
+            >
+              My Skill Pool
+            </motion.span>
+            <motion.h2
+              variants={slideUp}
+              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            >
+              Skills & Technologies
+            </motion.h2>
+            <motion.p
+              variants={fadeIn}
+              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            >
               During my learning process, I have seen many skill tools. The
               following are the ones I am good at and recommend.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div>
-            {skills.map((skill, index) => {
-              <div key={index}>
-                <div>
-                  <div>{skill.icon}</div>
-                  <h3>{skill.title}</h3>
+          <motion.div
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                variants={slideUp}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all p-6 border border-gray-100 dark:border-gray-700"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg mr-4 text-primary-600 dark:text-primary-400">
+                    <skill.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    {skill.title}
+                  </h3>
                 </div>
-                <p>{skill.description}</p>
-                <div>
-                  {skill.technologies.map((tech, index) => {
-                    <span key={index}>{tech}</span>;
-                  })}
+                <p className="text-gray-600 dark:text-gray-300 mb-5">
+                  {skill.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {skill.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              </div>;
-            })}
-          </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
-          <motion.div>
-            <div>
-              <span>
-                <span></span>
+          <motion.div variants={fadeIn} className="mt-16 text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300">
+              <span className="mr-2 relative">
+                <span className="absolute top-0 right-0 w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                <span className="w-2 h-2 bg-green-500 rounded-full inline-block"></span>
               </span>
               目前正在学习的技能...
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
