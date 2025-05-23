@@ -148,8 +148,10 @@ export default function About() {
             <motion.div className="flex space-x-4 pt-2" variants={slideUp}>
               {[AiFillGithub, AiFillWechat, AiOutlineQq].map((Icon, index) => (
                 <a
-                  href="#"
+                  href={index === 0 ? "https://github.com/game-diot" : "#"}
                   key={index}
+                  target={index === 0 ? "_blank" : "_self"}
+                  rel={index === 0 ? "noopener noreferrer" : ""}
                   className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 text-2xl transition-colors duration-300"
                 >
                   <Icon />

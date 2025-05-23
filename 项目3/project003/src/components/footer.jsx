@@ -18,6 +18,16 @@ export default function Footer() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <footer className="relative bg-gray-50 dark:bg-gray-900 pt-16 pb-8 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -61,15 +71,24 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer">
+              <li
+                onClick={() => scrollToSection("about")}
+                className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer"
+              >
                 <FiArrowUp className="transform rotate-45" />
                 <span>About</span>
               </li>
-              <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer">
+              <li
+                onClick={() => scrollToSection("projects")}
+                className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer"
+              >
                 <FiArrowUp className="transform rotate-45" />
                 <span>Projects</span>
               </li>
-              <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer">
+              <li
+                onClick={() => scrollToSection("skills")}
+                className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors cursor-pointer"
+              >
                 <FiArrowUp className="transform rotate-45" />
                 <span>Skills</span>
               </li>
@@ -93,7 +112,9 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href=""
+                  href="https://github.com/game-diot"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-xl"
                   aria-label="Github"
                 >

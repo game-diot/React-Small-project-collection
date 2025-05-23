@@ -96,7 +96,7 @@ export default function Projects() {
               onClick={() => setActiveFilter(filter.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                 activeFilter === filter.id
-                  ? "bg-primary-600 text-white shadow-lg shadow-primary-500/20"
+                  ? "bg-primary-600  shadow-lg shadow-primary-500/20"
                   : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow hover:shadow-md"
               }`}
               whileHover={{ scale: 1.05 }}

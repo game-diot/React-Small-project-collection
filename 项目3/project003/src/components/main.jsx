@@ -61,23 +61,44 @@ export default function Main() {
               I tried the front and back ends and was deeply attracted by its
               charm
             </motion.p>
-            <motion.div
-              variants={fadeIn}
-              className="flex flex-wrap gap-3 justify-center md:justify-start"
-            >
-              <a
-                href="#projects"
-                className="px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-sm"
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+              <motion.button
+                onClick={() => {
+                  const element = document.querySelector("#projects");
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2.5 bg-primary-600 hover:bg-primary-700 font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
               >
                 我的小项目
-              </a>
-              <a
-                href="#skills"
-                className="px-5 py-2.5 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-sm"
+              </motion.button>
+              <motion.button
+                onClick={() => {
+                  const element = document.querySelector("#skills");
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2.5 bg-primary-600 hover:bg-primary-700  font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
               >
-                我的技能池
-              </a>
-            </motion.div>
+                我的技能
+              </motion.button>
+            </div>
             <motion.div
               variants={fadeIn}
               className="flex gap-4 justify-center md:justify-start"
@@ -94,7 +115,14 @@ export default function Main() {
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                 aria-label="GitHub"
               >
-                <AiFillGithub className="w-5 h-5" />
+                <motion.a
+                  href="https://github.com/game-diot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+                >
+                  <AiFillGithub className="w-5 h-5" />
+                </motion.a>
               </a>
               <a
                 href="https://wechat.com"

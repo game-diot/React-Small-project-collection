@@ -1,12 +1,49 @@
-# React + Vite
+## 项目简介
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个使用 React 开发的技能展示应用，旨在展示个人技能和技术栈。应用采用了现代化的设计风格，支持响应式布局和暗色模式。本项目适合希望展示个人技能的开发者学习和参考。
 
-Currently, two official plugins are available:
+## 开发环境
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js >= 14.0.0
+- React 18
+- Vite
+- Framer Motion (动画库)
+- React Icons (图标库)
 
-## Expanding the ESLint configuration
+## 主要功能
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌟 技能卡片展示
+  - 包含前端开发、后端开发、数据库管理和 Web 开发技能
+  - 技能卡片悬停动画效果
+- 📜 技术栈展示
+  - 每个技能卡片展示相关技术栈
+- 🌙 暗色模式支持
+  - 自动切换明暗主题
+
+## 快速开始
+
+```
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+```
+
+## 技术实现细节
+
+### 项目架构
+
+- 使用 Vite 作为构建工具
+- 采用 React 18 最新特性
+- 模块化的文件结构
+  - src/components : 组件文件
+  - src/styles : 样式文件
+
+### 动画效果
+
+- 使用 Framer Motion 实现组件动画效果
+- 使用 React Icons 提供图标支持
