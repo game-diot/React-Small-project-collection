@@ -164,7 +164,7 @@ function App() {
   }, [weatherData]);
   return (
     <div>
-      <div className="header">
+      <div className="header limited-width">
         <div>
           <h1>
             <img src={logo} alt="" />
@@ -186,7 +186,7 @@ function App() {
       </div>
       {/* this is for antd message */}
       {contextHolder}
-      <div className="container">
+      <div className="container ,limited-width">
         <Container
           description={weatherData.weather[0].main}
           time={currentTime}

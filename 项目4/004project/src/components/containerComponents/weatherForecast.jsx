@@ -22,13 +22,38 @@ export function WeatherForecast({ forecastData }) {
     hours = hours ? hours : 12;
     return `${hours}:${minutes} ${ampm}`;
   };
+  const getNearestForecastIndex = () => {
+    const now = new Date();
+    const nowTime = now.getTime();
+
+    let closestIndex = 0;
+    let smallestDiff = Infinity;
+
+    forecastData.list.forEach((item, index) => {
+      const forecastTime = new Date(item.dt_txt).getTime();
+      const diff = Math.abs(forecastTime - nowTime);
+      if (diff < smallestDiff) {
+        smallestDiff = diff;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  };
+
+  const highlightedIndex = getNearestForecastIndex();
 
   return (
     <div className="forecast-container">
-      <h1 className="forecast-title">未来天气预报</h1>
+      <h1 className="forecast-title">未来天气预报(当前时间段处于高亮区域)</h1>
       <div className="forecast-grid">
         {forecastData.list.map((data, index) => (
-          <div key={index} className="forecast-item">
+          <div
+            key={index}
+            className={`forecast-item ${
+              index === highlightedIndex ? "highlighted" : ""
+            }`}
+          >
             <p className="forecast-time">{formatTimeAMPM(data.dt_txt)}</p>
             <img
               className="forecast-icon"
