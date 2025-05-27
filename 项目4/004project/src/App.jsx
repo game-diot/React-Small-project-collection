@@ -146,6 +146,22 @@ function App() {
       fetchForecastData();
     }
   }, [weatherData.coord]);
+  const [themeClass, setThemeClass] = useState("theme-clear");
+  useEffect(() => {
+    if (weatherData && weatherData.weather && weatherData.weather[0]) {
+      const main = weatherData.weather[0].main;
+      let theme = "theme-clear";
+      if (["Clouds", "Mist", "Fog", "Haze"].includes(main))
+        theme = "theme-cloud";
+      else if (["Rain", "Drizzle", "Thunderstorm"].includes(main))
+        theme = "theme-rain";
+      else if (["Snow"].includes(main)) theme = "theme-snow";
+      else if (["Clear"].includes(main)) theme = "theme-clear";
+      else theme = "theme-default";
+      setThemeClass(theme);
+      document.body.className = theme; // 动态切换body的class
+    }
+  }, [weatherData]);
   return (
     <div>
       <div className="header">
@@ -156,33 +172,16 @@ function App() {
           </h1>
         </div>
         <div>
-          {!cityName ? (
+          <div className="search-container">
             <input
               type="text"
               placeholder="输入地区名称"
-              onChange={(e) => {
-                setCityName(e.target.value);
-              }}
-            />
-          ) : (
-            <input
-              type="text"
-              placeholder="输入地区名称"
-              onChange={(e) => {
-                setCityName(e.target.value);
-              }}
+              value={cityName}
+              onChange={(e) => setCityName(e.target.value)}
               onKeyDown={handleKeyDown}
             />
-          )}
-          {!cityName ? (
-            <button>
-              <FaSearch />
-            </button>
-          ) : (
-            <button onClick={handleSearch}>
-              <FaSearch />
-            </button>
-          )}
+            <FaSearch className="search-icon" onClick={handleSearch} />
+          </div>
         </div>
       </div>
       {/* this is for antd message */}
