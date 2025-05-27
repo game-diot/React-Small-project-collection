@@ -62,6 +62,36 @@
 
 [查看详情](./项目2/project002/README.md)
 
+### 项目 3: 个人作品集网站
+
+一个使用 React 18 + Vite + Framer Motion + Tailwind CSS 构建的响应式个人作品集网站，支持暗色/亮色模式切换。
+
+**主要技术栈：** React 18, Vite, Framer Motion, Tailwind CSS
+
+**学习重点：** 响应式设计, 动画效果, 主题切换, 组件复用
+
+**难度：** 中级
+
+**效果展示：**
+
+[查看详情](./项目3/project003/README.md)
+
+### 项目 4: Weather Now - React 天气应用
+
+一个基于 React 和 OpenWeatherMap API 开发的天气查询应用，支持实时天气查询、天气预报和动态主题切换。
+
+**主要技术栈：** React 18, Vite, Axios, OpenWeatherMap API
+
+**学习重点：** API 调用, Hooks 应用, 动态主题, 数据可视化
+
+**难度：** 中级
+
+**效果展示：**
+
+![天气应用效果图](./项目4/效果展示图.png)
+
+[查看详情](./项目4/README.md)
+
 _更多精彩项目持续更新中..._
 
 ## 📖 如何运行单个项目
