@@ -8,6 +8,11 @@ import {
   FiGlobe,
 } from "react-icons/fi";
 import me from "../../public/me.png";
+import cookie from "../../public/cookie.png";
+import bg from "../../public/bg-change.png";
+import post from "../../public/post.png";
+import charts from "../../public/charts.png";
+import api from "../../public/apiweather.png";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -16,13 +21,80 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Project 1",
-      description: "Description of Project 1",
-      tags: ["React", "Node.js", "MongoDB"],
-      category: "web",
+      title: "前端+可视化图表",
+      description:
+        "这是一个基于 React + TypeScript + Echarts 构建的数据可视化项目，提供 20+ 种图表类型的展示与交互，支持动态数据加载和可视化配置。",
+      tags: ["React", "Echarts", "TypeScript"],
+      category: "Front-end",
+      src: charts,
       link: {
-        code: "https://github.com/your-username/project-1",
-        live: "https://your-username.github.io/project-1",
+        code: "https://github.com/game-diot/Echarts-on-the-front-end",
+        live: "https://echarts-on-the-front-end.vercel.app/",
+      },
+    },
+    {
+      id: 2,
+      title: "API获取天气信息",
+      description:
+        "这是一个基于 React 和 OpenWeatherMap API 开发的天气应用，通过实际项目演练掌握前端与 API 交互的核心知识。本项目采用最新的 Vite + React 技术栈，实现了一个功能完整、界面优雅的天气查询应用。",
+      tags: ["React", "API", "Axios"],
+      category: "Front-end",
+      src: api,
+      link: {
+        code: "https://github.com/game-diot/Weather-query",
+        live: "https://weather-query.vercel.app/",
+      },
+    },
+    {
+      id: 3,
+      title: "Post个人文章网站",
+      description:
+        "这是一个使用 MERN（MongoDB、Express、React、Node.js）技术栈开发的全栈博客系统，支持用户注册、登录、发布文章、编辑文章等功能。",
+      tags: ["React", "Node.js", "MongoDB"],
+      category: "Full Stack",
+      src: post,
+      link: {
+        code: "https://github.com/game-diot/full-stack-project-article-post",
+        live: "https://post-frontend-eight.vercel.app/",
+      },
+    },
+
+    {
+      id: 4,
+      title: "Cookie备忘录",
+      description:
+        "这是一个使用 React 开发的备忘录清单应用，具有明暗主题切换功能，可以帮助用户管理日常任务。应用采用了现代化的设计风格，支持本地数据持久化存储。本项目适合 React 初学者学习和参考。",
+      tags: ["React", "Node.js", "MongoDB"],
+      category: "Front-end",
+      src: cookie,
+      link: {
+        code: "https://github.com/game-diot/ToDoList",
+        live: "https://to-do-list-gray-five-46.vercel.app/",
+      },
+    },
+    {
+      id: 5,
+      title: "背景切换",
+      description:
+        "这是一个使用 React + Vite 开发的背景颜色修改工具，提供了丰富的颜色选择和管理功能。用户可以通过多种方式选择和应用颜色，包括预设颜色、自定义颜色选择器，并支持颜色历史记录管理。",
+      tags: ["React", "Vite"],
+      category: "Front-end",
+      src: bg,
+      link: {
+        code: "https://github.com/game-diot/ChangeBackColor",
+        live: "https://change-back-color.vercel.app/",
+      },
+    },
+    {
+      id: 6,
+      title: "更多项目",
+      description: "更多项目请跳转到我的GitHub查看",
+      tags: ["React", "Vite", "..."],
+      category: "Front-end",
+      src: me,
+      link: {
+        code: "https://github.com/game-diot",
+        live: "https://github.com/game-diot",
       },
     },
   ];
@@ -32,16 +104,12 @@ export default function Projects() {
       name: "All",
     },
     {
-      id: "web",
-      name: "Web",
+      id: "Full Stack",
+      name: "Full Stack",
     },
     {
-      id: "mobile",
-      name: "Mobile",
-    },
-    {
-      id: "desktop",
-      name: "Desktop",
+      id: "Front-end",
+      name: "Front-end",
     },
   ];
 
@@ -127,7 +195,7 @@ export default function Projects() {
                 <div className="h-full flex flex-col">
                   <div className="relative overflow-hidden h-48">
                     <img
-                      src={me}
+                      src={project.src}
                       alt="Project Image"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />

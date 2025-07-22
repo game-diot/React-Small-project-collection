@@ -25,28 +25,28 @@ export default function Skills() {
       title: "前端开发",
       description:
         "熟练使用HTML、CSS、JavaScript等前端技术，能够构建响应式、交互性强的网页。",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Vue.js"],
+      technologies: ["HTML", "CSS", "JavaScript", "React", "TS"],
     },
     {
       icon: FiServer,
       title: "后端开发",
       description:
-        "熟悉后端开发语言，如Java、Python等，能够开发Web应用程序、API接口等。",
-      technologies: ["Java", "Python", "Node.js", "Express", "Django"],
+        "熟悉后端开发语言，如Node.js、Python等，能够开发Web应用程序、API接口等。",
+      technologies: ["Python", "Node.js", "Express"],
     },
     {
       icon: FiDatabase,
       title: "数据库管理",
       description:
         "熟悉数据库管理系统，如MySQL、MongoDB等，能够设计和优化数据库结构。",
-      technologies: ["MySQL", "MongoDB", "SQLite", "Firebase"],
+      technologies: ["MySQL", "MongoDB"],
     },
     {
       icon: FiLayers,
       title: "Web开发",
       description:
-        "熟悉Web开发工具和框架，如Git、Webpack等，能够进行Web应用程序的开发和部署。",
-      technologies: ["Git", "Webpack", "Gulp", "Babel"],
+        "熟悉Web开发工具和框架，如Git、Vite等，能够进行Web应用程序的开发和部署。",
+      technologies: ["Git", "Vite"],
     },
   ];
 
@@ -126,7 +126,7 @@ export default function Skills() {
                 <span className="absolute top-0 right-0 w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
                 <span className="w-2 h-2 bg-green-500 rounded-full inline-block"></span>
               </span>
-              目前正在学习的技能...
+              目前正在学习数据分析、数据挖掘、数据可视化等大数据技能
             </div>
           </motion.div>
         </motion.div>

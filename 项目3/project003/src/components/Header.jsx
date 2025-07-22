@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
-import "./navbar.css";
+import "./header.css";
 
-export default function Navbar() {
+export default function Header() {
   const [darkMode, setDarkMode] = useState(() => {
     return (
       localStorage.getItem("darkMode") === "true" ||
@@ -29,8 +29,9 @@ export default function Navbar() {
 
   const navItems = [
     { title: "首页", path: "/" },
-    { title: "技能", path: "/#skills" },
+
     { title: "项目", path: "/#projects" },
+    { title: "技能", path: "/#skills" },
     { title: "关于", path: "/#about" },
   ];
 
@@ -99,19 +100,6 @@ export default function Navbar() {
                 </a>
               </motion.div>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.1, rotate: 15 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleDarkMode}
-              aria-label={darkMode ? "切换为日间模式" : "切换为夜间模式"}
-              className="theme-button"
-            >
-              {darkMode ? (
-                <FiSun className="theme-icon" />
-              ) : (
-                <FiMoon className="theme-icon" />
-              )}
-            </motion.button>
           </div>
         </div>
       </nav>

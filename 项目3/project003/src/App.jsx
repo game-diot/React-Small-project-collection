@@ -1,11 +1,11 @@
 import "./index.css";
-import Navbar from "./components/navbar";
+import Header from "./components/Header";
 import Footer from "./components/footer";
 import Container from "./components/container";
 export default function App() {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Container />
       <Footer />
     </div>

@@ -39,107 +39,45 @@ export default function Main() {
           >
             <motion.div variants={fadeIn} className="inline-block">
               <span className="px-4 py-1.5 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium">
-                A student who likes front-end very much
+                一个对前端感兴趣的学生
               </span>
             </motion.div>
+
             <motion.h1
               variants={slideUp}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight space-y-2"
             >
-              Hi, I'm{" "}
-              <span className="text-primary-600 dark:text-primary-400">
-                Game Idiot
-              </span>
-              <br />
-              Keep practicing and make progress
-              <br />
+              <div>
+                嗨，我是
+                <span className="text-primary-600 dark:text-primary-400">
+                  {" "}
+                  泽洁{" "}
+                </span>
+                <br />
+                学无止境，无限进步。
+              </div>
+              <div className="mt-4 text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 font-semibold">
+                Hi, I'm{" "}
+                <span className="text-primary-600 dark:text-primary-400">
+                  Game Idiot
+                </span>
+                <br />
+                Keep practicing and make progress
+              </div>
             </motion.h1>
+
             <motion.p
               variants={fadeIn}
-              className="text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-lg"
+              className="text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-lg space-y-2"
             >
-              I tried the front and back ends and was deeply attracted by its
-              charm
+              <div>我接触了前后端开发，并被它的魅力深深吸引。</div>
+              <div>
+                I tried the front and back ends and was deeply attracted by its
+                charm.
+              </div>
             </motion.p>
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              <motion.button
-                onClick={() => {
-                  const element = document.querySelector("#projects");
-                  if (element) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-5 py-2.5 bg-primary-600 hover:bg-primary-700 font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
-              >
-                我的小项目
-              </motion.button>
-              <motion.button
-                onClick={() => {
-                  const element = document.querySelector("#skills");
-                  if (element) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-5 py-2.5 bg-primary-600 hover:bg-primary-700  font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
-              >
-                我的技能
-              </motion.button>
-            </div>
-            <motion.div
-              variants={fadeIn}
-              className="flex gap-4 justify-center md:justify-start"
-            >
-              <a
-                href="https://www.alipay.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                aria-label="Alipay"
-              >
-                <AiFillAliwangwang className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                aria-label="GitHub"
-              >
-                <motion.a
-                  href="https://github.com/game-diot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
-                >
-                  <AiFillGithub className="w-5 h-5" />
-                </motion.a>
-              </a>
-              <a
-                href="https://wechat.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                aria-label="WeChat"
-              >
-                <AiFillWechat className="w-5 h-5" />
-              </a>
-              <a
-                href="https://qq.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                aria-label="QQ"
-              >
-                <AiOutlineQq className="w-5 h-5" />
-              </a>
-            </motion.div>
           </motion.div>
+
           {/* 右侧 */}
           <motion.div
             variants={slideUp}

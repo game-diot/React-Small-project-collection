@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { AiFillGithub, AiFillWechat, AiOutlineQq } from "react-icons/ai";
+import { useState } from "react";
 
 import Me from "../../public/me.png";
 
 export default function About() {
+  const [showNumber, setShowNumber] = useState(false);
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,15 +33,15 @@ export default function About() {
   const skills = [
     {
       name: "Frontend",
-      items: ["React", "Vue", "JavaScript", "TypeScript", "HTML", "CSS"],
+      items: ["React", "Vue", "JavaScript", "TypeScript", "HTML", "CSS", "..."],
     },
     {
       name: "Backend",
-      items: ["Node.js", "Express", "Python", "Django"],
+      items: ["Node.js", "Express", "Python", "..."],
     },
     {
       name: "Tools",
-      items: ["Git", "Docker", "Webpack", "Nginx", "MySQL", "MongoDB"],
+      items: ["Git", "Docker", "Vite", "MySQL", "MongoDB", "..."],
     },
   ];
 
@@ -68,7 +70,7 @@ export default function About() {
             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             variants={slideUp}
           >
-            我是一名对前端感兴趣的学生，喜欢使用React和JavaScript等技术构建用户界面。我熟悉Git、Docker、Webpack、Nginx、MySQL和MongoDB等工具和技术。
+            我是一名对前端感兴趣的学生，喜欢使用React和JavaScript等技术构建用户界面。我熟悉React、Git、Docker、Cite、Notion、即时设计和MongoDB等工具和技术。
           </motion.p>
         </div>
 
@@ -136,17 +138,9 @@ export default function About() {
               </div>
             </motion.div>
 
-            <motion.div className="pt-4" variants={slideUp}>
-              <a
-                href="#contact"
-                className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
-              >
-                联系我
-              </a>
-            </motion.div>
-
             <motion.div className="flex space-x-4 pt-2" variants={slideUp}>
-              {[AiFillGithub, AiFillWechat, AiOutlineQq].map((Icon, index) => (
+              我的GitHub地址
+              {[AiFillGithub].map((Icon, index) => (
                 <a
                   href={index === 0 ? "https://github.com/game-diot" : "#"}
                   key={index}
